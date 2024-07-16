@@ -10,6 +10,7 @@ interface Task {
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
+
 export class AppComponent {
   newTask: string = '';
   tasks: Task[] = [];
