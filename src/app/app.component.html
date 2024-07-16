@@ -39,13 +39,7 @@
 
     <div class="ion-padding">
       <div class="flex-container">
-        <ion-textarea
-          [(ngModel)]="newTask"
-          label="Ajouter une tâche"
-          labelPlacement="floating"
-          fill="solid"
-          placeholder="Ex: Faire du café"
-        ></ion-textarea>
+        <ion-textarea [(ngModel)]="newTask" label="Ajouter une tâche" labelPlacement="floating" fill="outline" placeholder="Faire du café"></ion-textarea>
         <ion-button color="success" (click)="addTask()">Ajouter</ion-button>
       </div>
     </div>
