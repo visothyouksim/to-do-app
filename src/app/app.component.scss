@@ -1,27 +1,31 @@
 ion-list-header {
     --background: #f2a94a;
     --color: #000000;
-  
+
     --border-width: 0 0 4px 0;
     --border-color: #ffffff;
     --border-style: double;
-  }
+}
 
-  ion-badge {
+ion-badge {
     margin-right: 25px;
-  }
+}
 
-  .taskAccomplished {
+.taskAccomplished {
     --background: #7af24a;
     --color: #000000;
-  
+
     --border-width: 0 0 4px 0;
     --border-color: #ffffff;
     --border-style: double;
-  }
+}
 
-  .flex-container {
+.flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
+
+ion-button {
+    --border-radius	: 25px;
+}
