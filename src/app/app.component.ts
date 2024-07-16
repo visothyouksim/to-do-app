@@ -12,13 +12,7 @@ interface Task {
 })
 export class AppComponent {
   newTask: string = '';
-  tasks: Task[] = [
-    { name: 'Faire du café', completed: false },
-    { name: 'Faire du thé', completed: false },
-    { name: 'Faire du riz', completed: false },
-    { name: 'Faire des pâtes', completed: false },
-    { name: 'Faire la vaisselle', completed: false }
-  ];
+  tasks: Task[] = [];
 
   completedTasks: Task[] = [];
 
