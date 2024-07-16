@@ -1,6 +1,7 @@
 <ion-list>
   <ion-list-header class="taskAccomplished">
     <ion-label>Tâches accomplies</ion-label>
+    <ion-badge color="success">{{ completedTasks.length }}</ion-badge>
   </ion-list-header>
   <ion-item *ngFor="let task of completedTasks">
     <ion-label>{{ task.name }}</ion-label>
