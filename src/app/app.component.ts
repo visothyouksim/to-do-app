@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { Task } from './task.model'; // Assurez-vous que le chemin est correct
+import { Task } from './task.model';
 
 @Component({
   selector: 'app-root',
