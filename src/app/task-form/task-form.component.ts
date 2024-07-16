@@ -15,4 +15,11 @@ export class TaskFormComponent {
       this.newTask = '';
     }
   }
+  keyDetection(code: string) {
+    if (code === 'Enter') {
+      // console.log('enter pressed');
+      this.addTask();
+    }
+  }
+
 }
