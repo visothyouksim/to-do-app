@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-interface Task {
-  name: string;
-  completed: boolean;
-}
+import { Task } from './task.model';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +8,6 @@ interface Task {
 })
 export class AppComponent {
   tasks: Task[] = [];
-
   completedTasks: Task[] = [];
 
   addTask(taskName: string) {

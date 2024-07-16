@@ -1,9 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface Task {
-  name: string;
-  completed: boolean;
-}
+import { Task } from '../task.model';
 
 @Component({
   selector: 'app-completed-task-list',
