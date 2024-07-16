@@ -1,7 +1,6 @@
 
   <div class="flex-container">
-    <ion-textarea [(ngModel)]="newTask" (ionBlur)="addTask()"
-    (keydown)="keyDetection($event.code)" label="Ajouter une tâche" labelPlacement="floating" fill="outline" placeholder="Faire du café"></ion-textarea>
+    <ion-input type="text" [(ngModel)]="newTask" (ionBlur)="addTask()" (keydown)="keyDetection($event.code)" label="Ajouter une tâche" labelPlacement="floating" fill="outline" placeholder="Faire du café"></ion-input>
   </div>
   
   
