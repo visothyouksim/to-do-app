@@ -16,6 +16,7 @@
       <ion-list>
         <ion-list-header>
           <ion-label>Tâches à accomplir</ion-label>
+          <ion-badge color="warning">{{ tasks.length }}</ion-badge>
         </ion-list-header>
         <ion-item *ngFor="let task of tasks">
           <ion-checkbox slot="start" [checked]="task.completed" (ionChange)="toggleTask(task)"></ion-checkbox>

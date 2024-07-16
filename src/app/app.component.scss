@@ -1,15 +1,19 @@
 ion-list-header {
     --background: #f2a94a;
-    --color: #fff;
+    --color: #000000;
   
     --border-width: 0 0 4px 0;
     --border-color: #ffffff;
     --border-style: double;
   }
 
+  ion-badge {
+    margin-right: 25px;
+  }
+
   .taskAccomplished {
     --background: #7af24a;
-    --color: #fff;
+    --color: #000000;
   
     --border-width: 0 0 4px 0;
     --border-color: #ffffff;
