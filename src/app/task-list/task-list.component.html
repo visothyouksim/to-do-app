@@ -1,11 +1,15 @@
 <ion-list>
   <ion-list-header>
     <ion-label>Tâches à accomplir</ion-label>
-    <ion-badge color="primary" slot="end">{{ tasks.length }}</ion-badge>
+    <ion-badge color="warning">{{ tasks.length }}</ion-badge>
   </ion-list-header>
   <ion-item *ngFor="let task of tasks">
     <ion-label>{{ task.name }}</ion-label>
-    <ion-button slot="end" color="success" (click)="markAsCompleted(task)"><ion-icon name="checkmark-circle-outline"></ion-icon></ion-button>
-    <ion-button slot="end" color="danger" (click)="deleteTask(task)"><ion-icon name="close-circle-outline"></ion-icon></ion-button>
+    <ion-button slot="end" color="success" (click)="markAsCompleted(task)">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" color="danger" (click)="deleteTask(task)">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
   </ion-item>
 </ion-list>
