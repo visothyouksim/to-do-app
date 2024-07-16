@@ -23,15 +23,10 @@ export class AppComponent {
     }
   }
 
-  toggleTask(task: Task) {
-    task.completed = !task.completed;
-    if (task.completed) {
-      this.completedTasks.push(task);
-      this.tasks = this.tasks.filter(t => t !== task);
-    } else {
-      this.tasks.push(task);
-      this.completedTasks = this.completedTasks.filter(t => t !== task);
-    }
+  markAsCompleted(task: Task) {
+    task.completed = true;
+    this.completedTasks.push(task);
+    this.tasks = this.tasks.filter(t => t !== task);
   }
 
   deleteTask(task: Task) {

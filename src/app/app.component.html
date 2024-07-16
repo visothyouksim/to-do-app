@@ -19,8 +19,8 @@
           <ion-badge color="warning">{{ tasks.length }}</ion-badge>
         </ion-list-header>
         <ion-item *ngFor="let task of tasks">
-          <ion-checkbox slot="start" [checked]="task.completed" (ionChange)="toggleTask(task)"></ion-checkbox>
           <ion-label>{{ task.name }}</ion-label>
+          <ion-button slot="end" color="success" (click)="markAsCompleted(task)">Terminé</ion-button>
           <ion-button slot="end" color="danger" (click)="deleteTask(task)">Supprimer</ion-button>
         </ion-item>
       </ion-list>
@@ -32,7 +32,6 @@
           <ion-label>Tâches accomplies</ion-label>
         </ion-list-header>
         <ion-item *ngFor="let task of completedTasks">
-          <ion-checkbox slot="start" [checked]="task.completed" (ionChange)="toggleTask(task)"></ion-checkbox>
           <ion-label>{{ task.name }}</ion-label>
         </ion-item>
       </ion-list>
