@@ -10,18 +10,13 @@ interface Task {
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-
 export class AppComponent {
-  newTask: string = '';
   tasks: Task[] = [];
 
   completedTasks: Task[] = [];
 
-  addTask() {
-    if (this.newTask.trim().length > 0) {
-      this.tasks.push({ name: this.newTask, completed: false });
-      this.newTask = '';
-    }
+  addTask(taskName: string) {
+    this.tasks.push({ name: taskName, completed: false });
   }
 
   markAsCompleted(task: Task) {
