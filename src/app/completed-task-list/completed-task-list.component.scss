@@ -5,14 +5,29 @@
     --border-width: 0 0 4px 0;
     --border-color: #ffffff;
     --border-style: double;
+
+    background: rgba(9, 255, 0, 0.7);
 }
 
 ion-button {
-    --border-radius	: 25px;
+    --border-radius: 25px;
 }
 
 ion-badge {
     margin-right: 25px;
     --padding-end: 20px;
     --padding-start: 20px;
+}
+
+ion-list {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+ion-item {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.list-md {
+    padding: 0;
 }
