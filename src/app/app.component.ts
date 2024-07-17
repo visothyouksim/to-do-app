@@ -23,10 +23,10 @@ export class AppComponent {
   async loadTasks() {
     const tasks = await this.storage.get('tasks');
     const completedTasks = await this.storage.get('completedTasks');
-    if (tasks) {
+    if (tasks !== null) {
       this.tasks = tasks;
     }
-    if (completedTasks) {
+    if (completedTasks !== null) {
       this.completedTasks = completedTasks;
     }
   }
