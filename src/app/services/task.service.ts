@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { ApiResponse } from '../models/api-response';
+import { Task } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,9 @@ export class TaskService {
     return this.http.get<ApiResponse>(this.apiEndpoint + '/api/tasks');
   }
 
-  addTask(task: Task): void {}
+  addTask(task: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiEndpoint + '/api/tasks', task);
+  }
 
   markAsCompleted(task: Task): void {}
 

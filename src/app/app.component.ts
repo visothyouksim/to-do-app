@@ -28,7 +28,8 @@ export class AppComponent implements OnInit {
   }
 
   addTask(taskName: string) {
-    this.tasks.push({ name: taskName, completed: false });
+    //this.tasks.push({ name: taskName, completed: false });
+    this.taskService.addTask({ name: taskName, completed: false });
   }  
 
   deleteTask(task: Task) {
