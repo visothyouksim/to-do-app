@@ -1,55 +1,39 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { Task } from './task.model';
+import { Task } from './models/task.model';
+import { TaskService } from './services/task.service';
+import { OnInit } from '@angular/core';
+import { ApiResponse } from './models/api-response';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   tasks: Task[] = [];
   completedTasks: Task[] = [];
 
-  constructor(private storage: Storage) {
-    this.initStorage();
+  constructor(private storage: Storage, private taskService: TaskService) {
   }
 
-  async initStorage() {
-    await this.storage.create();
-    this.loadTasks();
-  }
-
-  async loadTasks() {
-    const tasks = await this.storage.get('tasks');
-    const completedTasks = await this.storage.get('completedTasks');
-    if (tasks !== null) {
-      this.tasks = tasks;
-    }
-    if (completedTasks !== null) {
-      this.completedTasks = completedTasks;
-    }
-  }
-
-  async saveTasks() {
-    await this.storage.set('tasks', this.tasks);
-    await this.storage.set('completedTasks', this.completedTasks);
+  async ngOnInit(): Promise<void> {
+    this.taskService.getTasks().subscribe((tasks: ApiResponse) => {
+      this.tasks = tasks['hydra:member'];
+    });
   }
 
   addTask(taskName: string) {
     this.tasks.push({ name: taskName, completed: false });
-    this.saveTasks();
   }
 
   markAsCompleted(task: Task) {
     task.completed = true;
     this.completedTasks.push(task);
     this.tasks = this.tasks.filter(t => t !== task);
-    this.saveTasks();
   }
 
   deleteTask(task: Task) {
     this.tasks = this.tasks.filter(t => t !== task);
-    this.saveTasks();
   }
 }
