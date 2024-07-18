@@ -20,18 +20,16 @@ export class AppComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.taskService.getTasks().subscribe((tasks: ApiResponse) => {
       this.tasks = tasks['hydra:member'];
+      this.tasks = this.tasks.filter(t => t.completed === false);
+
+      this.completedTasks = tasks['hydra:member'];
+      this.completedTasks = this.completedTasks.filter(t => t.completed === true);
     });
   }
 
   addTask(taskName: string) {
     this.tasks.push({ name: taskName, completed: false });
-  }
-
-  markAsCompleted(task: Task) {
-    task.completed = true;
-    this.completedTasks.push(task);
-    this.tasks = this.tasks.filter(t => t !== task);
-  }
+  }  
 
   deleteTask(task: Task) {
     this.tasks = this.tasks.filter(t => t !== task);

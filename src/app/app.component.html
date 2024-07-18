@@ -19,7 +19,7 @@
     <div class="ion-padding">
       <app-task-list
         [tasks]="tasks"
-        (taskCompleted)="markAsCompleted($event)"
+        (taskCompleted)="completedTasks"
         (taskDeleted)="deleteTask($event)"
       ></app-task-list>
     </div>
