@@ -11,8 +11,9 @@ export class TaskListComponent {
   @Output() taskCompleted = new EventEmitter<Task>();
   @Output() taskDeleted = new EventEmitter<Task>();
 
-  markAsCompleted(task: Task) {
+  updateTask(task: Task) {
     this.taskCompleted.emit(task);
+    console.log(task);
   }
 
   deleteTask(task: Task) {

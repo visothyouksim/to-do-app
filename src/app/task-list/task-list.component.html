@@ -5,11 +5,12 @@
   </ion-list-header>
   <ion-item *ngFor="let task of tasks">
     <ion-label>{{ task.name }}</ion-label>
-    <ion-button slot="end" color="success" (click)="markAsCompleted(task)">
+    <ion-button slot="end" color="success" (click)="updateTask(task)">
       <ion-icon name="checkmark-circle-outline"></ion-icon>
     </ion-button>
     <ion-button slot="end" color="danger" (click)="deleteTask(task)">
       <ion-icon name="close-circle-outline"></ion-icon>
     </ion-button>
+    <pre>{{ task | json }}</pre>
   </ion-item>
 </ion-list>

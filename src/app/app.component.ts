@@ -42,4 +42,18 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  updateTask(task: Task) {
+    task.completed = !task.completed;
+    this.taskService.updateTask(task).subscribe(() => {
+      const indexInTasks = this.tasks.findIndex(t => t.id === task.id);
+      if (indexInTasks !== -1) {
+        if (!task.completed) {
+          this.tasks.splice(indexInTasks, 1);
+        } else {
+          this.completedTasks.push(this.tasks.splice(indexInTasks, 1)[0]);
+        }
+      }
+    });
+  }
 }
