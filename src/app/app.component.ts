@@ -32,10 +32,14 @@ export class AppComponent implements OnInit {
     this.taskService.addTask({ name: taskName, completed: false }).subscribe(task => {
       this.tasks.push(task);
     });
-    
-  }  
+  }
 
   deleteTask(task: Task) {
-    this.tasks = this.tasks.filter(t => t !== task);
+    this.taskService.deleteTask(task).subscribe(() => {
+      const index = this.tasks.findIndex(t => t.id === task.id);
+      if (index !== -1) {
+        this.tasks.splice(index, 1);
+      }
+    });
   }
 }

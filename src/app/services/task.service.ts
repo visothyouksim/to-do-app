@@ -21,7 +21,11 @@ export class TaskService {
     return this.http.post<Task>(this.apiEndpoint + '/api/tasks', task);
   }
 
-  markAsCompleted(task: Task): void {}
+  markAsCompleted(task: Task): Observable<Task> {
+    return this.http.put<Task>(this.apiEndpoint + '/api/tasks/' + task.id, task);
+  }
 
-  deleteTask(task: Task): void {}
+  deleteTask(task: Task): Observable<Task> {
+    return this.http.delete<Task>(this.apiEndpoint + '/api/tasks/' + task.id);
+  }
 }
